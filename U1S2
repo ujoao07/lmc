@@ -1,0 +1,172 @@
+# -*- coding: utf-8 -*-
+"""
+Demonstração de Conceitos da Lógica (Unidade 1, Seção 2)
+Aplicando conceitos do Período Booleano em Python no Google Colab.
+"""
+
+# Importar bibliotecas para formatação, se necessário
+from IPython.display import display, Markdown, Latex
+import pandas as pd
+
+# --- Cabeçalho e Introdução ---
+display(Markdown("# Demonstração de Conceitos da Lógica (Unidade 1, Seção 2)"))
+display(Markdown("### Aplicação de Conceitos do Período Booleano na Lógica Computacional"))
+
+display(Markdown(
+    "A Unidade 1, Seção 2, 'Evolução da Lógica', destaca a importância do **Período Booleano** (1840-1910) para a lógica computacional. "
+    "Nesse período, George Boole desenvolveu a **Álgebra Booleana**, que representa valores lógicos (Verdadeiro/Falso) como **1 e 0**, "
+    "respectivamente, e opera com conectivos lógicos como 'e' (AND) e 'ou' (OR) [1-3]. "
+    "Esta demonstração explora esses conceitos fundamentais em Python, uma linguagem de programação que os utiliza amplamente."
+))
+
+# --- Seção 1: Representação de Valores Lógicos ---
+display(Markdown("## 1. Representação de Valores Lógicos: Verdadeiro (True) e Falso (False)"))
+display(Markdown(
+    "Na Álgebra Booleana, os dois dígitos **0 e 1** significam, respectivamente, **falso e verdadeiro** [1]. "
+    "Em Python, `True` e `False` são tipos de dados booleanos nativos, que podem ser convertidos para seus equivalentes inteiros (1 e 0)."
+))
+
+# Exemplo de representação
+verdadeiro = True
+falso = False
+
+print(f"Valor 'verdadeiro' em Python: {verdadeiro} (equivalente a {int(verdadeiro)})")
+print(f"Valor 'falso' em Python: {falso} (equivalente a {int(falso)})")
+
+# --- Seção 2: Operadores Lógicos Fundamentais ---
+display(Markdown("## 2. Operadores Lógicos Fundamentais (Conectivos Lógicos)"))
+display(Markdown(
+    "Os principais conectivos lógicos são a negação (NOT), conjunção (AND) e disjunção (OR) [5]. "
+    "Vamos demonstrar seu funcionamento e suas respectivas tabelas-verdade."
+))
+
+# 2.1 Conjunção (AND)
+display(Markdown("### 2.1 Conjunção (AND ou 'e')"))
+display(Markdown(
+    "A **conjunção** (`and`) é associada ao conectivo 'e' e resulta em **Verdadeiro** apenas se **ambas** as proposições forem verdadeiras [2, 5]. "
+    "Caso contrário, o resultado é Falso."
+))
+
+print("Tabela Verdade para A AND B:")
+data_and = []
+for a in [True, False]:
+    for b in [True, False]:
+        result = a and b
+        data_and.append([a, b, result])
+
+df_and = pd.DataFrame(data_and, columns=['A', 'B', 'A AND B'])
+display(df_and)
+
+display(Markdown("#### Exemplos de Conjunção:"))
+proposicao_A = True  # O Brasil é um país da América do Sul [2]
+proposicao_B = False # Pablo Picasso é um grande jogador de futebol [2]
+
+print(f"Proposição A (Verdadeira) AND Proposição B (Falsa): {proposicao_A and proposicao_B}")
+print(f"Proposição True AND True: {True and True}")
+print(f"Proposição False AND True: {False and True}")
+print(f"Proposição False AND False: {False and False}")
+
+# 2.2 Disjunção (OR)
+display(Markdown("### 2.2 Disjunção (OR ou 'ou')"))
+display(Markdown(
+    "A **disjunção** (`or`) é associada ao conectivo 'ou' e resulta em **Falso** apenas se **ambas** as proposições forem falsas [2, 5]. "
+    "Caso contrário, o resultado é Verdadeiro (sentido inclusivo)."
+))
+
+print("Tabela Verdade para A OR B:")
+data_or = []
+for a in [True, False]:
+    for b in [True, False]:
+        result = a or b
+        data_or.append([a, b, result])
+
+df_or = pd.DataFrame(data_or, columns=['A', 'B', 'A OR B'])
+display(df_or)
+
+display(Markdown("#### Exemplos de Disjunção:"))
+print(f"Proposição A (Verdadeira) OR Proposição B (Falsa): {proposicao_A or proposicao_B}")
+print(f"Proposição True OR True: {True or True}")
+print(f"Proposição False OR True: {False or True}")
+print(f"Proposição False OR False: {False or False}")
+
+# 2.3 Negação (NOT)
+display(Markdown("### 2.3 Negação (NOT ou 'não')"))
+display(Markdown(
+    "A **negação** (`not`) é um operador unário que **inverte o valor lógico** de uma proposição [5]. "
+    "Se a proposição for verdadeira, sua negação será falsa; se for falsa, sua negação será verdadeira."
+))
+
+print("Tabela Verdade para NOT A:")
+data_not = []
+for a in [True, False]:
+    result = not a
+    data_not.append([a, result])
+
+df_not = pd.DataFrame(data_not, columns=['A', 'NOT A'])
+display(df_not)
+
+display(Markdown("#### Exemplos de Negação:"))
+print(f"NOT True: {not True}")
+print(f"NOT False: {not False}")
+
+# --- Seção 3: Aplicação Prática: O Circuito de Votação ---
+display(Markdown("## 3. Aplicação Prática: O Circuito de Votação"))
+display(Markdown(
+    "No desafio proposto na seção 'Sem medo de errar' da Unidade 1, Seção 2, foi necessário projetar um circuito de votação. "
+    "O projeto seria aprovado **se o diretor executivo votasse a favor E obtivesse maioria** [6]. "
+    "A solução envolveu a Álgebra Booleana, onde **A (Diretor Executivo)**, **B (Vice-Diretor Financeiro)** e **C (Vice-Diretor de Relações Institucionais)** representam seus votos (1 para 'a favor', 0 para 'contra') [7].\n\n"
+    "A lógica de aprovação do projeto foi definida como: **'A' DEVE ser Verdadeiro E (B OU C) DEVE ser Verdadeiro** para que o projeto seja aprovado [7, 8]. "
+    "Ou seja, em termos de operadores lógicos: `A AND (B OR C)`."
+))
+
+# Definir função para simular a votação
+def simular_votacao(A, B, C):
+    """
+    Simula o circuito de votação da multinacional.
+    Aprovação: A (Diretor Executivo) True E (B (VP Fin.) True OU C (VP R. Inst.) True)
+    """
+    # Condição: Diretor executivo votar a favor (A) E (Vice-diretor financeiro votar a favor OU Vice-diretor de relações institucionais votar a favor)
+    projeto_aprovado = A and (B or C)
+    return projeto_aprovado
+
+display(Markdown("### Tabela Verdade do Circuito de Votação (`A AND (B OR C)`)"))
+
+data_votacao = []
+# Todas as combinações possíveis de votos (2^3 = 8 combinações)
+# Votos: A (Diretor), B (VP Financeiro), C (VP Relações Institucionais)
+for A_vote in [True, False]:
+    for B_vote in [True, False]:
+        for C_vote in [True, False]:
+            aprovado = simular_votacao(A_vote, B_vote, C_vote)
+            data_votacao.append([A_vote, B_vote, C_vote, aprovado])
+
+df_votacao = pd.DataFrame(data_votacao, columns=['Voto Diretor (A)', 'Voto VP Financeiro (B)', 'Voto VP R. Inst. (C)', 'Projeto Aprovado? (A AND (B OR C))'])
+display(df_votacao)
+
+display(Markdown("### Simulação de Cenários de Votação:"))
+
+# Cenário 1: Diretor e ambos VPs a favor
+print("\nCenário 1: Diretor (Sim), VP Financeiro (Sim), VP R. Inst. (Sim)")
+aprovacao = simular_votacao(True, True, True)
+print(f"Resultado: {'Aprovado' if aprovacao else 'Reprovado'}")
+
+# Cenário 2: Diretor a favor, apenas um VP a favor
+print("\nCenário 2: Diretor (Sim), VP Financeiro (Sim), VP R. Inst. (Não)")
+aprovacao = simular_votacao(True, True, False)
+print(f"Resultado: {'Aprovado' if aprovacao else 'Reprovado'}")
+
+# Cenário 3: Diretor a favor, mas nenhum VP a favor
+print("\nCenário 3: Diretor (Sim), VP Financeiro (Não), VP R. Inst. (Não)")
+aprovacao = simular_votacao(True, False, False)
+print(f"Resultado: {'Aprovado' if aprovacao else 'Reprovado'}")
+
+# Cenário 4: Diretor contra, mas VPs a favor
+print("\nCenário 4: Diretor (Não), VP Financeiro (Sim), VP R. Inst. (Sim)")
+aprovacao = simular_votacao(False, True, True)
+print(f"Resultado: {'Aprovado' if aprovacao else 'Reprovado'}")
+
+display(Markdown(
+    "Esta simulação demonstra como os conceitos da **Álgebra Booleana**, surgidos no Período Booleano da lógica, "
+    "são aplicados diretamente na construção de sistemas digitais e algoritmos em computação, "
+    "permitindo que as máquinas executem tarefas programáveis com respostas exatas baseadas em instruções e dados fornecidos [8, 9]."
+))
