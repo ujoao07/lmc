@@ -1,0 +1,53 @@
+Relatório da Unidade 1 – Seção 2: Evolução da Lógica 
+
+1 INTRODUÇÃO A lógica é o estudo da estrutura e dos princípios relacionados ao raciocínio e à argumentação válida. Compreender sua evolução é crucial para entender a lógica computacional e as linguagens de programação modernas. O estudo da lógica pode ser dividido em três grandes períodos: o Aristotélico, o Booleano e o Atual. 
+
+2 PERÍODO ARISTOTÉLICO Este período iniciou-se por volta de 390 a.C. e perdurou até meados do século XIX (1840 d.C.).
+ • Figura Central: O filósofo grego Aristóteles (384 – 322 a.C.) é considerado o iniciador da lógica formal.
+ 
+• Conceito Chave: Aristóteles desenvolveu a teoria do silogismo, um tipo de inferência dedutiva. Em um silogismo, ao aceitar as premissas como verdadeiras, a conclusão é obrigatoriamente verdadeira, independentemente do conteúdo. 
+
+• Lógica Clássica: Este período corresponde à Lógica Clássica, que é regida por três princípios fundamentais: 
+
+◦ Princípio da Identidade: Todo objeto é idêntico a si mesmo (A é A). ◦ Princípio da Não Contradição: Uma proposição não pode ser verdadeira e falsa ao mesmo tempo.
+ 
+◦ Princípio do Terceiro Excluído: Toda proposição é verdadeira ou falsa, sem uma terceira possibilidade. 
+
+• Houve um ressurgimento do interesse pela lógica nos séculos XII e XIII, focado em paradoxos semânticos, como o "paradoxo do mentiroso". A lógica voltou a se destacar com o Iluminismo, no século XVIII.
+
+ 3 PERÍODO BOOLEANO Este período se desenvolveu aproximadamente entre 1840 e 1910. 
+
+• Foco: Caracteriza-se pelo avanço da Lógica Formal, também conhecida como Lógica Simbólica, onde símbolos computáveis substituem palavras e proposições. • Principais Expoentes:
+
+ ◦ George Boole (1815-1864): Criou a Álgebra Booleana, o primeiro sistema detalhado a tratar a lógica como um cálculo, usando apenas dois dígitos: 0 para falso e 1 para verdadeiro. Na Álgebra Booleana, a adição é associada ao conectivo "ou" (OR) e a multiplicação ao conectivo "e" (AND). 
+
+◦ Georg Cantor (1845-1918): Idealizou a Teoria de Conjuntos, fornecendo uma estrutura de linguagem para a lógica formal e a Matemática Moderna.
+
+ ◦ Gottlob Frege (1848-1925): Criou a Lógica Matemática, que reformulou a lógica tradicional com uma linguagem matemática, desenvolvendo o cálculo proposicional e o cálculo de predicados. As notações (símbolos) da lógica formal atual tiveram origem com Frege. 
+• Operadores Lógicos Atuais: Os principais conectivos lógicos usados hoje, correspondendo a palavras em linguagens naturais, são: Negação (¬ ou ~), Conjunção (∧ ou AND), Disjunção (∨ ou OR), Condicional (→ ou "se..., então...") e Bicondicional (↔ ou "se, e somente se..."). 
+
+4 PERÍODO ATUAL Este período começou por volta de 1910. • Características: É marcado pelo desenvolvimento de sistemas formais polivalentes e lógicas não-clássicas. 
+
+• Lógicas Não-Clássicas: Permitem mais de dois valores de verdade (além de verdadeiro e falso) e podem abandonar alguns princípios da lógica clássica. Exemplos incluem:
+
+ ◦ Lógica Fuzzy: Permite valores de verdade entre 0 e 1 (exemplo: "parcialmente chuvoso") e é relevante para a Inteligência Artificial.
+
+ ◦ Lógica Modal: Proposições podem ser necessariamente verdadeiras ou impossíveis. ◦ Outras lógicas podem ser baseadas em linguagens mais ricas, princípios distintos ou semânticas diferentes. 
+
+5 CONCLUSÃO A compreensão desses períodos e conceitos é essencial para o desenvolvimento do raciocínio lógico e para a construção de sistemas e algoritmos computacionais.
+
+Este código Python é uma demonstração prática dos conceitos da Unidade 1, Seção 2:
+
+ Evolução da Lógica, com foco no Período Booleano. Ele ilustra como a Álgebra Booleana é a base da lógica computacional. Principais Demonstrações: 
+
+• Valores Lógicos (Verdadeiro/Falso): Mostra como True e False em Python representam os valores 1 e 0 da Álgebra Booleana.
+
+ • Operadores Lógicos Fundamentais: ◦ Conjunção (AND/e): Verdadeiro apenas se todas as proposições forem verdadeiras. 
+
+◦ Disjunção (OR/ou): Falso apenas se todas as proposições forem falsas. ◦ Negação (NOT/não): Inverte o valor lógico de uma proposição. • Aplicação Prática: O Circuito de Votação:
+
+ ◦ Simula a lógica de aprovação de um projeto com base nos votos de três membros do comitê (A AND (B OR C)), onde 1 = "a favor" e 0 = "contra".
+
+ ◦ Gera a tabela-verdade para todas as combinações de votos, demonstrando como os sistemas digitais fornecem respostas exatas. 
+
+Conclusão: O código reforça que a Álgebra Booleana é fundamental para a construção de sistemas digitais e algoritmos em computação, traduzindo o raciocínio lógico em operações programáveis.
